@@ -1,0 +1,61 @@
+@charset "utf-8";
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	outline: 0;
+	text-decoration: none;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	-webkit-tap-highlight-color: transparent;
+}
+
+html {
+	min-height: 100%;
+	font-size: 62.5%;
+	-webkit-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	text-size-adjust: 100%;
+}
+
+body{
+	width: 100%;
+	min-height: 100%;
+	font-family:"Microsoft YaHei","微软雅黑","MicrosoftJhengHei","华文细黑","Helvetica", "Arial", "sans-serif";
+	font-size: 1.4rem;
+	position: relative;
+	word-break:break-all;
+}
+
+img {
+	-ms-interpolation-mode: bicubic;
+	vertical-align: middle;
+}
+
+textarea {
+	resize: none;
+}
+
+input, button, select, textarea {
+	/* outline: none; */
+	/* border-radius: 0; */
+	/* font-family:"Microsoft YaHei","微软雅黑","MicrosoftJhengHei","华文细黑","Helvetica", "Arial", "sans-serif"; */
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none !important;
+    /* margin: 0; */
+}
+
+ul,ol,li {
+	list-style: none;
+	-webkit-margin-before: 0;
+	-webkit-margin-after: 0;
+	-webkit-margin-start: 0;
+	-webkit-margin-end: 0;
+	-webkit-padding-start: 0;
+}
+
