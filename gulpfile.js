@@ -1,54 +1,31 @@
-const http = require('http');
+/**
+ *  Welcome to your gulpfile!
+ *  The gulp tasks are split into several files in the gulp directory
+ *  because putting it all here was too long
+ */
 
-const static = require('node-static');
+'use strict';
+
+const fs = require('fs');
 
 const gulp = require('gulp');
 
-const livereload = require('gulp-livereload');
+/**
+ *  This will load all js or coffee files in the gulp directory
+ *  in order to load all gulp tasks
+ */
+fs.readdirSync('./gulp').filter(function(file) {
 
-const eslint = require('gulp-eslint');
+	return (/\.js$/i).test(file);
+}).map(function(file) {
 
-gulp.task('watch', function() {
-	livereload.listen({
-		start: true
-	});
-
-	gulp.watch('./**/*.*', function(file) {
-		livereload.changed(file.patch);
-	});
+	require('./gulp/' + file);
 });
 
-gulp.task('http', function() {
-	var file = new static.Server('./', {
-		cache: 60,
-		gzip: true,
-		indexFile: 'index.html'
-	});
-
-	http.createServer(function(request, response) {
-		request.addListener('end', function() {
-			file.serve(request, response, function(err, result) {
-				if (err) {
-					if (err.status === 404) {
-						file.serveFile('/not_found.html', 404, {}, request, response);
-					} else if (err.status === 500) {
-						file.serveFile('/error.html', 500, {}, request, response);
-					}
-					console.error(`Error serving ${request.url}  -  ${err.status} - ${err.message}`);
-				}
-			});
-		}).resume();
-	}).listen(8080);
-	console.log('Server running at http://127.0.0.1:8080/');
-});
-
-gulp.task('lint', function() {
-	return gulp.src('./js/**/*.js')
-		.pipe(eslint())
-		.pipe(eslint.format())
-		.pipe(eslint.failAfterError());
-});
-
-gulp.task('default', ['lint'], function() {
-	gulp.run('watch', 'http');
+/**
+ *  Default task clean temporaries directories and launch the
+ *  main optimization build task
+ */
+gulp.task('default', function() {
+	gulp.start('launch');
 });
