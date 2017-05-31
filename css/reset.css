@@ -1,5 +1,6 @@
 @charset "utf-8";
 
+/* Reset */
 * {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
@@ -21,13 +22,13 @@ html {
 	text-size-adjust: 100%;
 }
 
-body{
+body {
 	width: 100%;
 	min-height: 100%;
-	font-family:"Microsoft YaHei","微软雅黑","MicrosoftJhengHei","华文细黑","Helvetica", "Arial", "sans-serif";
+	font-family: "Microsoft YaHei", "微软雅黑", "MicrosoftJhengHei", "华文细黑", "Helvetica", "Arial", "sans-serif";
 	font-size: 1.4rem;
 	position: relative;
-	word-break:break-all;
+	word-break: break-all;
 }
 
 img {
@@ -39,18 +40,26 @@ textarea {
 	resize: none;
 }
 
-input, button, select, textarea {
+input,
+button,
+select,
+textarea {
+
 	/* outline: none; */
+
 	/* border-radius: 0; */
+
 	/* font-family:"Microsoft YaHei","微软雅黑","MicrosoftJhengHei","华文细黑","Helvetica", "Arial", "sans-serif"; */
 }
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-    -webkit-appearance: none !important;
-    /* margin: 0; */
+	-webkit-appearance: none !important;    /* margin: 0; */
 }
 
-ul,ol,li {
+ul,
+ol,
+li {
 	list-style: none;
 	-webkit-margin-before: 0;
 	-webkit-margin-after: 0;
@@ -58,4 +67,23 @@ ul,ol,li {
 	-webkit-margin-end: 0;
 	-webkit-padding-start: 0;
 }
+/* End Reset */
 
+/* a 标签伪类
+ * “爱恨原则”（LoVe/HAte），即四种伪类的首字母:LVHA。正确的顺序：a:link、a:visited、a:hover、a:active . 
+ */
+a:link,
+a:visited,
+a:hover,
+a:active {
+	color: #1ab19d;
+}
+
+/* General */
+.flex-box{display:-webkit-box;display:-webkit-flex;display:flex;}
+.flex-pack-c{-webkit-box-pack:center;-webkit-justify-content:center;justify-content:center;}
+.flex-pack-j{-webkit-box-pack:justify;-webkit-justify-content:space-between;justify-content:space-between;}
+.flex-align-c{-webkit-box-align:center;-webkit-align-items:center;align-items:center;}
+.flex-1{-webkit-box-flex:1;-webkit-flex:1;flex:1;}
+
+/* End General */
