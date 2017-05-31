@@ -11,6 +11,6 @@ gulp.task('watch', function() {
 	});
 
 	gulp.watch('./**/*.*', function(file) {
-		livereload.changed(file.patch);
+		livereload.changed(file.path);
 	});
 });

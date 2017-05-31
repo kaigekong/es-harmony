@@ -4,5 +4,5 @@
 const gulp = require('gulp');
 
 
-gulp.task('launch', ['lint', 'watch', 'http'], function() {
+gulp.task('launch', ['lint','babel', 'watch', 'http'], function() {
 });
