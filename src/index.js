@@ -38,9 +38,20 @@ window.onload = () => {
 
   _variable.onclick = () => {
     ; (async () => {
-      const module = await import(/* webpackChunkName: 'variable' */ './js/variable');
-      module.default();
+      const _module = await import(/* webpackChunkName: "variable" */ './js/variable');
+      _module.default();
       return 'module';
     })().then(str => console.log(str));
   }
+
+  // 生成器
+  const _generator = document.getElementById('generator');
+
+  _generator.onclick = () => {
+    ; (async () => {
+      const _module = await import(/* webpackChunkName: "generator" */, './js/generator');
+      _module.default();
+      return 'module';
+    })().then(str => console.log(str));
+  };
 };
